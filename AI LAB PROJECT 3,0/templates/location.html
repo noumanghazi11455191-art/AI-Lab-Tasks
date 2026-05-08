@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Locations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container animate-fade-in">
+        <header>
+            <h1>Hospital <span class="accent">Finder</span></h1>
+            <p>Locate the nearest specialized medical facility.</p>
+        </header>
+
+        <div class="map-placeholder">
+            <div class="map-overlay">
+                <p>Google Maps View Loading...</p>
+                <small>Integration with Google Maps API active</small>
+            </div>
+        </div>
+
+        <div class="hospital-list">
+            <div class="hospital-item">
+                <h3>Punjab Institute of Cardiology</h3>
+                <p>Jail Rd, G.O.R. - I, Lahore, Punjab</p>
+            </div>
+            <div class="hospital-item">
+                <h3>Hameed Latif Hospital</h3>
+                <p>14 Abu Bakar Block, Garden Town, Lahore</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="/" class="btn-secondary">Return Home</a>
+        </div>
+    </div>
+</body>
+</html>

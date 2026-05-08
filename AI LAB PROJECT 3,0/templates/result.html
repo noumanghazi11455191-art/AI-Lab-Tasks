@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container result-page">
+        <header>
+            <h1>Analysis <span class="accent">Result</span></h1>
+        </header>
+
+        <div class="result-card animate-pop-in">
+            <div class="prediction-box">
+                <h3>Detected Condition:</h3>
+                <h2 class="disease-name">{{ prediction }}</h2>
+            </div>
+
+            <div class="info-section">
+                <h4><i class="icon">💊</i> Recommended Action:</h4>
+                <p>{{ prescription }}</p>
+            </div>
+
+            <div class="doctor-box">
+                <h4><i class="icon">👨‍⚕️</i> Recommended Specialist:</h4>
+                <p><strong>{{ doctor.type }}</strong> at {{ doctor.hospital }}</p>
+                <a href="/location" class="btn-location">Find Hospital Near Me</a>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <a href="/" class="btn-secondary">← Back to Search</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+:root {
+    --primary: #2d3436;
+    --accent: #0984e3;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.container {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.8s ease-out;
+}
+
+header { text-align: center; margin-bottom: 30px; }
+h1 { font-weight: 600; color: var(--primary); margin-bottom: 10px; }
+.accent { color: var(--accent); }
+
+/* Search Bar */
+#symptomSearch {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #dfe6e9;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+#symptomSearch:focus { border-color: var(--accent); box-shadow: 0 0 10px rgba(9, 132, 227, 0.2); }
+
+/* Symptom Grid */
+.symptom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+
+.symptom-item {
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #f1f2f6;
+}
+
+.symptom-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background: #f8f9fa;
+}
+
+.symptom-item label { cursor: pointer; text-transform: capitalize; font-size: 14px; }
+
+/* Button */
+.btn-predict {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.3);
+}
+
+.btn-predict:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(9, 132, 227, 0.4);
+    background: #0873c4;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in { animation: fadeIn 1.2s ease-in; }
+
+/* Custom Scrollbar */
+.symptom-grid::-webkit-scrollbar { width: 8px; }
+.symptom-grid::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+.symptom-grid::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
